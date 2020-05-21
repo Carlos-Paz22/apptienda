@@ -18,15 +18,14 @@ class _AddDataState extends State<AddData> {
   var _formKey = GlobalKey<FormState>();
 
   void addData() {
-    var url = "http://192.168.1.6/tienda/adddata.php";
+    var url = "http://192.168.1.9/tienda/addData.php";
 
     http.post(url, body: {
       "username": controllerUsername.text,
       "password": controllerPassword.text,
       "telefono": controllerTelefono.text,
-      "ciudad": controllerDireccion.text,
-      "direccion": controllerCiudad.text,
-
+      "ciudad": controllerCiudad.text,
+      "direccion": controllerDireccion.text,
       //"nivel": _mySelection.toString(), //aqui traemos el DropdownMenuItem lo llamamos _mySelection este es como el controller
       //"nivel": controllerNivel.text
     });
@@ -78,24 +77,24 @@ class _AddDataState extends State<AddData> {
                    new ListTile(
                     leading: const Icon(Icons.location_city, color: Colors.black),
                     title: new TextFormField(
-                      controller: controllerCiudad,
+                      controller: controllerTelefono,
                           validator: (value) {
-                            if (value.isEmpty) return "Ingresa una ciudad";
+                            if (value.isEmpty) return "Ingresa un Telefono";
                           },
                       decoration: new InputDecoration(
-                        hintText: "Ciudad", labelText: "Ciudad",
+                        hintText: "Telefono", labelText: "Telefono",
                       ),
                     ),
                   ),
                      new ListTile(
                     leading: const Icon(Icons.phone_android, color: Colors.black),
                     title: new TextFormField(
-                      controller: controllerTelefono,
+                      controller: controllerCiudad,
                           validator: (value) {
-                            if (value.isEmpty) return "Ingresa un telefono";
+                            if (value.isEmpty) return "Ingresa una Ciudad";
                           },
                       decoration: new InputDecoration(
-                        hintText: "Telefono", labelText: "Telefono",
+                        hintText: "Ciudad", labelText: "Ciudad",
                       ),
                     ),
                   ),

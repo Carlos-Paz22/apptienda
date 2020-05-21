@@ -5,7 +5,7 @@ import 'package:apptienda/pages/detail.dart';
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:apptienda/pages/registroUsuarios.dart';
+/* import 'package:apptienda/pages/registroUsuarios.dart'; */
  
 
 class ListarUser extends StatefulWidget {
@@ -17,7 +17,7 @@ class _ListarUserState extends State<ListarUser> {
 
 
   Future<List> getData() async{
-    final response = await http.get("http://192.168.1.6/tienda/getdata.php",);
+    final response = await http.get("http://192.168.1.9/tienda/getData.php",);
     return json.decode(response.body);
 
    
@@ -30,6 +30,9 @@ class _ListarUserState extends State<ListarUser> {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text("Listado Usuarios"),
+        actions: <Widget>[
+          IconButton(icon:Icon(Icons.search), onPressed:(){})
+        ],
       ),
       floatingActionButton: new FloatingActionButton(
         child: new Icon(

@@ -47,7 +47,7 @@ class _LoginPageState extends State<LoginPage> {
 
   String mensaje = '';
   Future<List> login() async{ 
-    final response = await http.post("http://192.168.1.6/tienda/login.php",body: {
+    final response = await http.post("http://192.168.1.9/tienda/login.php",body: {
 
     "username": controllerUser.text,
     "password": controllerPass.text,

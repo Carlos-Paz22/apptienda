@@ -20,7 +20,7 @@ class _EditDataState extends State<EditData> {
 
 
   void editData() {
-    var url="http://192.168.1.6/tienda/editdata.php";
+    var url="http://192.168.1.9/tienda/editData.php";
     http.post(url,body: {
       "id": widget.list[widget.index]['id'],
       "username": controllerUsername.text,

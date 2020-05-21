@@ -15,7 +15,7 @@ class Detailproduct extends StatefulWidget {
 class _DetailproductState extends State<Detailproduct> {
 
 void deleteProduct(){
-  var url="http://192.168.1.6/tienda/deleteProduct.php";
+  var url="http://192.168.1.9/tienda/deleteProduct.php";
   http.post(url, body: {
     'id': widget.list[widget.index]['id']
   });
@@ -23,7 +23,7 @@ void deleteProduct(){
 
 void confirm (){
   AlertDialog alertDialog = new AlertDialog(
-    content: new Text("Esta seguto de eliminar '${widget.list[widget.index]['nombre']}'"),
+    content: new Text("Esta seguro de eliminar '${widget.list[widget.index]['nombre']}'"),
     actions: <Widget>[
       new RaisedButton(
         child: new Text(" Eliminar",style: new TextStyle(color: Colors.black),),
@@ -46,7 +46,8 @@ void confirm (){
     ],
   );
 
-  showDialog(context: context, child: alertDialog);
+  showDialog(context: context, child: alertDialog,barrierDismissible: false);
+  
 }
 
   @override

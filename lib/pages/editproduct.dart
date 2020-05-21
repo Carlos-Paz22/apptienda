@@ -21,7 +21,7 @@ class _EditProductState extends State<EditProduct> {
 
 
   void editProduct() {
-    var url="http://192.168.1.6/tienda/editproduct.php";
+    var url="http://192.168.1.9/tienda/editProduct.php";
     http.post(url,body: {
       "id": widget.list[widget.index]['id'],
       "nombre": controllerNombre.text,

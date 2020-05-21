@@ -17,7 +17,7 @@ class _AddProductState extends State<AddProduct> {
   var _formKey = GlobalKey<FormState>();
 
   void addProduct() {
-    var url = "http://192.168.1.6/tienda/addProduct.php";
+    var url = "http://192.168.1.9/tienda/addProduct.php";
 
     http.post(url, body: {
       "nombre": controllerNombre.text,
