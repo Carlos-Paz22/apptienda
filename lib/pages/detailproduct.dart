@@ -113,7 +113,7 @@ void confirm (){
                           borderRadius: new BorderRadius.circular(15.0)
                       ),
                       onPressed: () {
-                       Navigator.pushReplacementNamed(context, '/pageUser');
+                       Navigator.pushReplacementNamed(context, '/pages/listProduct');
                     
                       },
                     ),

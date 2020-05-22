@@ -54,7 +54,7 @@ void confirm (){
     return new Scaffold(
       appBar: new AppBar(title: new Text("${widget.list[widget.index]['username']}")),
       body: new Container(
-        height: 270.0, 
+        
         padding: const EdgeInsets.all(20.0),
         child: new Card(
           child: new Center(
@@ -64,8 +64,22 @@ void confirm (){
                 new Padding(padding: const EdgeInsets.only(top: 30.0),),
                 new Text(widget.list[widget.index]['username'], style: new TextStyle(fontSize: 20.0),),
                 Divider(),
-                new Text("Nivel : ${widget.list[widget.index]['nivel']}", style: new TextStyle(fontSize: 18.0),),
+
                 new Padding(padding: const EdgeInsets.only(top: 30.0),),
+                new Text(widget.list[widget.index]['password'], style: new TextStyle(fontSize: 20.0),),
+                Divider(),
+              
+                new Padding(padding: const EdgeInsets.only(top: 30.0),),
+                new Text(widget.list[widget.index]['telefono'], style: new TextStyle(fontSize: 20.0),),
+                Divider(),
+              
+                new Padding(padding: const EdgeInsets.only(top: 30.0),),
+                new Text(widget.list[widget.index]['ciudad'], style: new TextStyle(fontSize: 20.0),),
+                Divider(),
+                new Padding(padding: const EdgeInsets.only(top: 30.0),),
+                new Text(widget.list[widget.index]['direccion'], style: new TextStyle(fontSize: 20.0),),
+                Divider(),
+              
 
                 new Row(
                   mainAxisSize: MainAxisSize.min,
@@ -97,7 +111,7 @@ void confirm (){
                         borderRadius: new BorderRadius.circular(30.0)
                     ),
                     onPressed: () {
-                     Navigator.pushReplacementNamed(context, '/pageUser');
+                     Navigator.pushReplacementNamed(context, '/pages/listUser');
                   
                     },
                   ),
