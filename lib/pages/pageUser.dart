@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:apptienda/pages/detail.dart';
-import 'package:apptienda/pages/listarUsuarios.dart';
+/* import 'package:apptienda/pages/detailProduct.dart';
+import 'package:apptienda/pages/listUser.dart'; */
+
+import 'detailUser.dart';
 
 
-class Vendedores extends StatelessWidget {
+class User extends StatelessWidget {
 
   
   @override

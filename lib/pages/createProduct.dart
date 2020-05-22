@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:apptienda/pages/list_product.dart';
+import 'package:apptienda/pages/listProduct.dart';
 
 class AddProduct extends StatefulWidget {
   @override
@@ -119,7 +119,7 @@ class _AddProductState extends State<AddProduct> {
                     shape: new RoundedRectangleBorder(
                         borderRadius: new BorderRadius.circular(30.0)),
                     onPressed: () {
-                      Navigator.pushReplacementNamed(context, '/powerPage');
+                      Navigator.pushReplacementNamed(context, '/pageUser');
                     },
                   ),
                 ],

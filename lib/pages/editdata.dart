@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:apptienda/pages/listarUsuarios.dart';
+import 'package:apptienda/pages/listUser.dart';
 
 class EditData extends StatefulWidget {
   final List list;
@@ -16,7 +16,9 @@ class _EditDataState extends State<EditData> {
   //para la base
   TextEditingController controllerUsername;
   TextEditingController controllerPassword;
-  TextEditingController controllerNivel;
+  TextEditingController controllerTelefono;
+  TextEditingController controllerCiudad;
+  TextEditingController controllerDireccion;
 
 
   void editData() {
@@ -25,14 +27,19 @@ class _EditDataState extends State<EditData> {
       "id": widget.list[widget.index]['id'],
       "username": controllerUsername.text,
       "password": controllerPassword.text,
-      "nivel": controllerNivel.text
+      "telefono": controllerTelefono.text,
+      "ciudad": controllerCiudad.text,
+      "direccion": controllerDireccion.text,
+      
     });
   }
  @override
 void initState() {
       controllerUsername= new TextEditingController(text: widget.list[widget.index]['username'] );
       controllerPassword= new TextEditingController(text: widget.list[widget.index]['password'] );
-      controllerNivel= new TextEditingController(text: widget.list[widget.index]['nivel'] );
+      controllerTelefono= new TextEditingController(text: widget.list[widget.index]['telefono'] );
+      controllerCiudad= new TextEditingController(text: widget.list[widget.index]['ciudad'] );
+      controllerDireccion= new TextEditingController(text: widget.list[widget.index]['direccion'] );
       super.initState();
     }
 
@@ -62,7 +69,7 @@ void initState() {
                     ),
                   ),
                   new ListTile(
-                    leading: const Icon(Icons.location_on, color: Colors.black),
+                    leading: const Icon(Icons.security, color: Colors.black),
                     title: new TextFormField(
                       controller: controllerPassword,
                           validator: (value) {
@@ -74,14 +81,38 @@ void initState() {
                     ),
                   ),
                   new ListTile(
-                    leading: const Icon(Icons.settings_input_component, color: Colors.black),
+                    leading: const Icon(Icons.call, color: Colors.black),
                     title: new TextFormField(
-                      controller: controllerNivel,
+                      controller: controllerTelefono,
                           validator: (value) {
-                            if (value.isEmpty) return "Ingresa un Nivel";
+                            if (value.isEmpty) return "Ingresa un Telefono";
                           },
                       decoration: new InputDecoration(
-                        hintText: "Nivel", labelText: "Nivel",
+                        hintText: "Telefono", labelText: "Telefono",
+                      ),
+                    ),
+                  ),
+                  new ListTile(
+                    leading: const Icon(Icons.location_on, color: Colors.black),
+                    title: new TextFormField(
+                      controller: controllerCiudad,
+                          validator: (value) {
+                            if (value.isEmpty) return "Ingresa una Ciudad";
+                          },
+                      decoration: new InputDecoration(
+                        hintText: "Ciudad", labelText: "Ciudad",
+                      ),
+                    ),
+                  ),
+                  new ListTile(
+                    leading: const Icon(Icons.my_location, color: Colors.black),
+                    title: new TextFormField(
+                      controller: controllerDireccion,
+                          validator: (value) {
+                            if (value.isEmpty) return "Ingresa una Direccion";
+                          },
+                      decoration: new InputDecoration(
+                        hintText: "Direccion", labelText: "Direccion",
                       ),
                     ),
                   ),
@@ -98,7 +129,7 @@ void initState() {
                       editData();
                       Navigator.of(context).push(
                         new MaterialPageRoute(
-                          builder: (BuildContext context)=>new ListarUser()
+                          builder: (BuildContext context)=>new ListUser()
                         )
                       );
                     },

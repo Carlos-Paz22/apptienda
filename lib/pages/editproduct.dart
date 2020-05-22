@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:apptienda/pages/list_product.dart';
+import 'package:apptienda/pages/listProduct.dart';
 
 class EditProduct extends StatefulWidget {
   final List list;
@@ -113,7 +113,7 @@ void initState() {
                       editProduct();
                       Navigator.of(context).push(
                         new MaterialPageRoute(
-                          builder: (BuildContext context)=>new LisProduct()
+                          builder: (BuildContext context)=>new ListProduct()
                         )
                       );
                     },

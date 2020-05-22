@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:apptienda/pages/listarUsuarios.dart';
+import 'package:apptienda/pages/listUser.dart';
 import './editdata.dart';
 import 'package:http/http.dart' as http;
 
@@ -32,7 +32,7 @@ void confirm (){
           deleteData();
           Navigator.of(context).push(
             new MaterialPageRoute(
-              builder: (BuildContext context)=> new ListarUser(),
+              builder: (BuildContext context)=> new ListUser(),
             )
           );
         },
@@ -97,7 +97,7 @@ void confirm (){
                         borderRadius: new BorderRadius.circular(30.0)
                     ),
                     onPressed: () {
-                     Navigator.pushReplacementNamed(context, '/powerPage');
+                     Navigator.pushReplacementNamed(context, '/pageUser');
                   
                     },
                   ),

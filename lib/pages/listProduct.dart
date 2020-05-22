@@ -1,17 +1,17 @@
 import 'package:apptienda/pages/detailproduct.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:apptienda/pages/crear_producto.dart';
+import 'package:apptienda/pages/createProduct.dart';
 
 import 'dart:async';
 import 'dart:convert';
 
-class LisProduct extends StatefulWidget {
+class ListProduct extends StatefulWidget {
   @override
-  _LisProductState createState() => _LisProductState();
+  _ListProductState createState() => _ListProductState();
 }
 
-class _LisProductState extends State<LisProduct> {
+class _ListProductState extends State<ListProduct> {
   Future<List> getProduct() async {
     final response = await http.get(
       "http://192.168.1.9/tienda/getProduct.php",

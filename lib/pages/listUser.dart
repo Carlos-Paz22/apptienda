@@ -1,19 +1,20 @@
+import 'package:apptienda/pages/createAccount.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:apptienda/pages/crear_producto.dart';
-import 'package:apptienda/pages/detail.dart';
+import 'package:apptienda/pages/createProduct.dart';
+import 'package:apptienda/pages/detailUser.dart';
 import 'dart:async';
 import 'dart:convert';
 
 /* import 'package:apptienda/pages/registroUsuarios.dart'; */
  
 
-class ListarUser extends StatefulWidget {
+class ListUser extends StatefulWidget {
   @override
-  _ListarUserState createState() => _ListarUserState();
+  _ListUserState createState() => _ListUserState();
 }
 
-class _ListarUserState extends State<ListarUser> {
+class _ListUserState extends State<ListUser> {
 
 
   Future<List> getData() async{
@@ -32,6 +33,7 @@ class _ListarUserState extends State<ListarUser> {
         title: new Text("Listado Usuarios"),
         actions: <Widget>[
           IconButton(icon:Icon(Icons.search), onPressed:(){})
+
         ],
       ),
       floatingActionButton: new FloatingActionButton(
@@ -40,7 +42,7 @@ class _ListarUserState extends State<ListarUser> {
           color: Colors.black,
            ),
         onPressed: () => Navigator.of(context).push(new MaterialPageRoute(
-             builder: (BuildContext context) => new AddProduct(),
+             builder: (BuildContext context) => new AddData(),
             )),
       ), 
       

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:apptienda/pages/list_product.dart';
+import 'package:apptienda/pages/listProduct.dart';
 import './editproduct.dart';
 import 'package:http/http.dart' as http;
 
@@ -32,7 +32,7 @@ void confirm (){
           deleteProduct();
           Navigator.of(context).push(
             new MaterialPageRoute(
-              builder: (BuildContext context)=> new LisProduct(),
+              builder: (BuildContext context)=> new ListProduct(),
             )
           );
         },
@@ -113,7 +113,7 @@ void confirm (){
                           borderRadius: new BorderRadius.circular(15.0)
                       ),
                       onPressed: () {
-                       Navigator.pushReplacementNamed(context, '/powerPage');
+                       Navigator.pushReplacementNamed(context, '/pageUser');
                     
                       },
                     ),

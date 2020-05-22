@@ -2,13 +2,13 @@ import 'dart:convert';
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:apptienda/pages/crear_cuenta.dart';
-import 'package:apptienda/pages/crear_producto.dart';
-import 'package:apptienda/pages/list_product.dart';
-import 'package:apptienda/pages/listarUsuarios.dart';
-import 'package:apptienda/pages/powerPage.dart';
+import 'package:apptienda/pages/createAccount.dart';
+import 'package:apptienda/pages/createProduct.dart';
+import 'package:apptienda/pages/listProduct.dart';
+import 'package:apptienda/pages/listUser.dart';
+import 'package:apptienda/pages/pageUser.dart';
 //import 'package:apptienda/pages/crear_producto.dart';
-import 'package:apptienda/pages/vendedoresPage.dart';
+import 'package:apptienda/pages/pageAdmin.dart';
 import 'package:http/http.dart' as http;
  void main () => runApp(LoginApp());
 
@@ -22,13 +22,13 @@ import 'package:http/http.dart' as http;
        title: 'Mercado Libre',
        home: LoginPage(),
        routes: <String, WidgetBuilder>{
-        '/powerPage': (BuildContext context)=> new SuperV(),
-        '/vendedoresPage': (BuildContext context)=> new Vendedores(),
-         '/pages/list_product': (BuildContext context)=> new LisProduct(),
+        '/pageAdmin': (BuildContext context)=> new Admin(),
+        '/pageUser': (BuildContext context)=> new User(),
+         '/pages/listProduct': (BuildContext context)=> new ListProduct(),
         '/LoginPage': (BuildContext context)=> new LoginPage(),
-        '/pages/listarUsuarios': (BuildContext context)=> new ListarUser(),
-        '/pages/crear_cuenta': (BuildContext context)=> new AddData(),
-        '/pages/crear_producto': (BuildContext context)=> new AddProduct(),
+        '/pages/listUser': (BuildContext context)=> new ListUser(),
+        '/pages/createAccount': (BuildContext context)=> new AddData(),
+        '/pages/createProduct': (BuildContext context)=> new AddProduct(),
         
        },
      );
@@ -102,9 +102,9 @@ showDialog(
   }else{
     
    if(datauser[0]['estado']=='admin'){
-       Navigator.pushReplacementNamed(context, '/powerPage');
+       Navigator.pushReplacementNamed(context, '/pageAdmin');
     }else if(datauser[0]['estado']=='ventas'){
-      Navigator.pushReplacementNamed(context, '/pages/list_product');
+      Navigator.pushReplacementNamed(context, '/pages/listProduct');
     }
 
     setState(() {
@@ -238,7 +238,7 @@ showDialog(
                       ),
                       onPressed: (){
                       
-                     Navigator.pushReplacementNamed(context, '/pages/crear_cuenta');
+                     Navigator.pushReplacementNamed(context, '/pages/createAccount');
                       },
                     ),
                     Text(mensaje, style: TextStyle(fontSize: 1 ,color: Colors.red),),

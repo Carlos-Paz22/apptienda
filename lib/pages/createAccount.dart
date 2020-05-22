@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:apptienda/pages/listarUsuarios.dart';
+import 'package:apptienda/pages/listUser.dart';
 
 class AddData extends StatefulWidget {
   @override
@@ -49,7 +49,7 @@ class _AddDataState extends State<AddData> {
               new Column(
                 children: <Widget>[
                   new ListTile(
-                    leading: const Icon(Icons.person, color: Colors.black),
+                    leading: const Icon(Icons.person, color: Colors.blueAccent),
                     title: new TextFormField(
                       controller: controllerUsername,
                           validator: (value) {
@@ -61,7 +61,7 @@ class _AddDataState extends State<AddData> {
                     ),
                   ),
                   new ListTile(
-                    leading: const Icon(Icons.vpn_key, color: Colors.black),
+                    leading: const Icon(Icons.vpn_key, color: Colors.blueAccent),
                     title: new TextFormField(
                       controller: controllerPassword,
                        obscureText: true,
@@ -75,7 +75,7 @@ class _AddDataState extends State<AddData> {
                   ),
                   
                    new ListTile(
-                    leading: const Icon(Icons.location_city, color: Colors.black),
+                    leading: const Icon(Icons.location_city, color: Colors.blueAccent),
                     title: new TextFormField(
                       controller: controllerTelefono,
                           validator: (value) {
@@ -87,7 +87,7 @@ class _AddDataState extends State<AddData> {
                     ),
                   ),
                      new ListTile(
-                    leading: const Icon(Icons.phone_android, color: Colors.black),
+                    leading: const Icon(Icons.phone_android, color: Colors.blueAccent),
                     title: new TextFormField(
                       controller: controllerCiudad,
                           validator: (value) {
@@ -99,7 +99,7 @@ class _AddDataState extends State<AddData> {
                     ),
                   ),
                      new ListTile(
-                    leading: const Icon(Icons.call_split, color: Colors.black),
+                    leading: const Icon(Icons.call_split, color: Colors.blueAccent),
                     title: new TextFormField(
                       controller: controllerDireccion,
                           validator: (value) {
